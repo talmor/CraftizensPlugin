@@ -145,7 +145,7 @@ public abstract class Quest {
 			cy /= (6*area);
 			
 		    // XXX: VARIABLE TYPE ON AN UPDATE
-			player.getUser().a.b(new da((int)cx, (int)player.getY(), (int)cy));
+			player.getUser().a.b(new OPacket6SpawnPosition((int)cx, (int)player.getY(), (int)cy));
 			
 			return true;
 		} else { 

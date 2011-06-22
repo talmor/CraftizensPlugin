@@ -10,7 +10,7 @@ public class BuildQuest extends Quest {
 
 	public BuildQuest(QuestInfo info, Player player, boolean newQuest) {
 		super(info, player, newQuest);
-		
+		BaseContainerBlock b;
 		// get build info data: format: item name,id,quantity:item name,id,quantity,etc
 		String [] data = info.getData().split(":");
 		types = new ArrayList<Integer>();

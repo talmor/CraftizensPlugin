@@ -102,7 +102,7 @@ public class FetchBlockQuest extends Quest {
 		for (int i = 0; i < coords.size(); i++) {
 			if (!complete[i] && CraftizensListener.isLookingAtAndInRange(player, x[i]+.5, y[i], z[i]+.5, 3)) {
 				sendFakeBlockPacket(player, x[i], y[i], z[i], 0);
-				etc.getServer().dropItem(x[i]+.5, y[i], z[i]+.5, types[i]);
+				player.getWorld().dropItem(x[i]+.5, y[i], z[i]+.5, types[i]);
 				complete[i] = true;
 			}
 		}
@@ -118,7 +118,7 @@ public class FetchBlockQuest extends Quest {
 	}
 	
 	public void sendFakeBlockPacket(Player player, int x, int y, int z, int type) {
-		gd packet = new gd();
+		OPacket53BlockChange packet = new OPacket53BlockChange();
 		packet.a = x;
 		packet.b = y;
 		packet.c = z;

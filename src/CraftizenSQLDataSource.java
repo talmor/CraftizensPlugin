@@ -20,6 +20,8 @@ public class CraftizenSQLDataSource extends CraftizenDataSource {
                 log.log(Level.SEVERE, null, ex);
                 return null;
             }
+            log.info(Craftizens.DATA_SOURCE_CONNECTION_URL);
+            log.info(Craftizens.DATA_SOURCE_USERNAME+":"+Craftizens.DATA_SOURCE_PASSWORD+".");
             connection = DriverManager.getConnection(Craftizens.DATA_SOURCE_CONNECTION_URL, Craftizens.DATA_SOURCE_USERNAME, Craftizens.DATA_SOURCE_PASSWORD);
         }
         return connection;
